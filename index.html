@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Academic portfolio and selected research works.">
+<title>Iain Renouf — Academic Works</title>
+
+<style>
+:root {
+  --ink: #192329;
+  --muted: #617076;
+  --paper: #f8f7f2;
+  --line: #d9ddd8;
+  --accent: #0e5d62;
+  --accent2: #e5b55d;
+  --card: #fff;
+  --shadow: 0 14px 35px rgba(25, 35, 41, .07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.55 Inter, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.shell {
+  max-width: 1120px;
+  margin: auto;
+  padding: 0 28px;
+}
+
+.eyebrow {
+  font-size: .74rem;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 750;
+}
+
+/* Header */
+
+.top {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+
+.top .shell {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+}
+
+.brand {
+  font-family: Georgia, serif;
+  font-size: 1.22rem;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  font-size: .91rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* Hero */
+
+.hero {
+  padding: 90px 0 64px;
+  background: linear-gradient(
+    135deg,
+    #edf1ed 0%,
+    var(--paper) 55%,
+    #f5ecd9 100%
+  );
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr .7fr;
+  gap: 60px;
+  align-items: end;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.1;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5.45rem);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  max-width: 800px;
+}
+
+h1 em {
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.lede {
+  max-width: 650px;
+  font-size: 1.14rem;
+  color: #3d4c51;
+  margin: 25px 0 0;
+}
+
+.identity {
+  border-left: 2px solid var(--accent);
+  padding: 8px 0 8px 18px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.identity strong {
+  color: var(--ink);
+  display: block;
+  font-size: 1.1rem;
+}
+
+/* Main content */
+
+main {
+  padding: 76px 0;
+}
+
+section {
+  margin-bottom: 84px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.section-head h2 {
+  font-size: 2.1rem;
+  font-weight: 500;
+}
+
+.section-head p {
+  max-width: 480px;
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Filters */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 13px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: .86rem;
+  cursor: pointer;
+}
+
+.chip:hover,
+.chip.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: white;
+}
+
+/* Work cards */
+
+.works {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.work {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 24px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  transition: .2s transform, .2s box-shadow;
+}
+
+.work:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.meta {
+  font-size: .75rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.work h3 {
+  font-size: 1.48rem;
+  font-weight: 500;
+  margin: 12px 0 10px;
+}
+
+.work p {
+  font-size: .92rem;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.tag {
+  background: #edf2ef;
+  color: #4d5a5c;
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: .74rem;
+}
+
+.work-link {
+  margin-top: 18px;
+  font-weight: 700;
+  font-size: .9rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.work-link:hover {
+  text-decoration: underline;
+}
+
+/* About and contact */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.panel {
+  padding: 30px;
+  background: #e8eeea;
+}
+
+.panel:nth-child(2) {
+  background: #f5ecd9;
+}
+
+.panel h2 {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.panel p {
+  color: #405054;
+  max-width: 530px;
+}
+
+.contact {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Footer */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 25px 0 42px;
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+.footer-in {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+  .top .shell,
+  .footer-in {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav {
+    gap: 14px;
+  }
+
+  .hero {
+    padding: 64px 0 50px;
+  }
+
+  .hero-grid,
+  .about {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .works {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="top">
+  <div class="shell">
+    <a class="brand" href="#top">Iain Renouf</a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#works">Selected work</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<div id="top" class="hero">
+  <div class="shell hero-grid">
+    <div>
+      <div class="eyebrow">Academic portfolio</div>
+
+      <h1>
+        Research, analysis <em>&amp;</em> ideas.
+      </h1>
+
+      <p class="lede">
+        A curated home for working papers, policy analysis,
+        quantitative projects, and research notes in development economics.
+      </p>
+    </div>
+
+    <aside class="identity">
+      <strong>Development Economics</strong>
+      Master's student<br>
+      Halifax, Nova Scotia
+    </aside>
+  </div>
+</div>
+
+<main class="shell">
+
+  <section id="works">
+    <div class="section-head">
+      <h2>Selected work</h2>
+
+      <p>
+        Use this space to foreground your strongest work.
+        Replace the examples below with links to your published files
+        or project pages.
+      </p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter works">
+      <button class="chip active" data-filter="all">All work</button>
+      <button class="chip" data-filter="research">Research</button>
+      <button class="chip" data-filter="policy">Policy analysis</button>
+      <button class="chip" data-filter="methods">Methods</button>
+    </div>
+
+    <div class="works" id="worksGrid">
+
+      <article class="work" data-category="research">
+        <div class="meta">Research paper · 2026</div>
+
+        <h3>Research title</h3>
+
+        <p>
+          A concise two- or three-sentence description of the research
+          question, data, approach, and contribution.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Development</span>
+          <span class="tag">Applied economics</span>
+        </div>
+
+        <a class="work-link" href="#" aria-label="Read research title">
+          Read paper →
+        </a>
+      </article>
+
+      <article class="work" data-category="policy">
+        <div class="meta">Policy brief · 2026</div>
+
+        <h3>Policy analysis title</h3>
+
+        <p>
+          Summarize the policy problem, the audience for the brief,
+          and the practical implication of your findings.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Policy evaluation</span>
+          <span class="tag">Public policy</span>
+        </div>
+
+        <a class="work-link" href="#" aria-label="Read policy analysis title">
+          Read brief →
+        </a>
+      </article>
+
+      <article class="work" data-category="methods">
+        <div class="meta">Methods note · 2025</div>
+
+        <h3>Quantitative project title</h3>
+
+        <p>
+          Briefly describe a dataset, identification strategy,
+          reproducible workflow, or methodological question you examined.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Econometrics</span>
+          <span class="tag">Causal inference</span>
+        </div>
+
+        <a class="work-link" href="#" aria-label="View quantitative project">
+          View project →
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="about" class="about">
+
+    <div class="panel">
+      <div class="eyebrow">Purpose</div>
+
+      <h2>A complement to a résumé</h2>
+
+      <p>
+        A résumé establishes experience; this portfolio gives your work
+        room to breathe. Use each entry to communicate the question,
+        method, evidence, and relevance behind it.
+      </p>
+    </div>
+
+    <div class="panel">
+      <div class="eyebrow">Contact</div>
+
+      <h2>Let's connect.</h2>
+
+      <p>
+        For academic collaboration, research opportunities,
+        or discussion of this work, get in touch.
+      </p>
+
+      <a class="contact" href="mailto:your.email@example.com">
+        your.email@example.com →
+      </a>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="shell footer-in">
+    <span>© <span id="year"></span> Iain Renouf</span>
+    <span>Built as an academic portfolio.</span>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll(".chip").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".chip").forEach(item => {
+      item.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    document.querySelectorAll(".work").forEach(work => {
+      work.style.display =
+        button.dataset.filter === "all" ||
+        work.dataset.category === button.dataset.filter
+          ? "flex"
+          : "none";
+    });
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
