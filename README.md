@@ -1,6 +1,6 @@
-- 👋 Hi, I’m @iainpr
+- 👋 Hi, I’m @iainpr - recent grad from B.Sc. in Economics and Philosophy double major
 - 👀 I’m interested in ... econ, philosophy, polisci
-- 🌱 I’m currently learning ... stats/math, applied econ for use in R/stata/python
+- 🌱 I’m currently learning ... python, finance
 - 💞️ I’m looking to collaborate on ... learning
 - 📫 How to reach me ... here
 
