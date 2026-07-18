@@ -136,15 +136,44 @@ h1 em {
 
 .identity {
   border-left: 2px solid var(--accent);
-  padding: 8px 0 8px 18px;
+  padding: 6px 0 6px 18px;
   color: var(--muted);
-  font-size: .95rem;
+}
+
+.identity p {
+  margin: 0;
+}
+
+.identity-kicker {
+  margin-bottom: 5px !important;
+  color: var(--accent);
+  font-size: 0.73rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .identity strong {
-  color: var(--ink);
   display: block;
-  font-size: 1.1rem;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.identity-program {
+  margin-top: 9px !important;
+  max-width: 250px;
+  color: #46555a;
+  font-size: 0.96rem;
+  line-height: 1.4;
+}
+
+.identity-location {
+  margin-top: 7px !important;
+  color: var(--muted);
+  font-size: 0.88rem;
 }
 
 /* Main content */
@@ -382,11 +411,17 @@ footer {
       </p>
     </div>
 
-    <aside class="identity">
-      <strong>B.Sc. Graduate, double major Economics & Philosophy</strong>
-      Master's student in Development Economics<br>
-      Halifax, Nova Scotia
-    </aside>
+<aside class="identity">
+  <p class="identity-kicker">Economics & Philosophy</p>
+
+  <strong>B.Sc. Graduate</strong>
+
+  <p class="identity-program">
+    Incoming Master's student in Development Economics
+  </p>
+
+  <p class="identity-location">Halifax, Nova Scotia</p>
+</aside>
   </div>
 </div>
 
